@@ -1,0 +1,11 @@
+{
+  "manifest_version": 3,
+  "name": "Color Name Companion",
+  "version": "2.0.0",
+  "description": "Pick a screen color and prepare a readable project name for Adobe Express or other design work.",
+  "minimum_chrome_version": "114",
+  "permissions": ["sidePanel", "storage", "clipboardWrite"],
+  "background": { "service_worker": "background.js" },
+  "action": { "default_title": "Open Color Name Companion" },
+  "side_panel": { "default_path": "panel.html" }
+}

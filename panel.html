@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Color Name Companion</title>
+  <link rel="stylesheet" href="panel.css">
+  <script type="module" src="panel.js"></script>
+</head>
+<body>
+  <main>
+    <header>
+      <span class="mark" aria-hidden="true"></span>
+      <h1>Color Name Companion</h1>
+    </header>
+    <button id="pick" class="primary">Pick color from screen</button>
+    <p id="status" role="status" aria-atomic="true"></p>
+
+    <section id="result" aria-label="Picked color" hidden>
+      <div class="sample">
+        <div id="swatch" aria-hidden="true"></div>
+        <div class="sample-text">
+          <p id="color-family"></p>
+          <h2 id="color-name"></h2>
+          <button id="copy-hex" class="code text-button" aria-label="Copy HEX"><span id="hex-value"></span> <span>Copy</span></button>
+        </div>
+      </div>
+      <p id="ambiguity" class="notice" hidden></p>
+      <div id="alternatives" aria-label="Choose a color name"></div>
+
+      <div class="card project">
+        <label for="project-label">Project label <span class="muted">(optional)</span></label>
+        <input id="project-label" placeholder="e.g. Summer poster" maxlength="180">
+        <label for="project-name">Project name</label>
+        <input id="project-name" maxlength="250" autocomplete="off">
+        <button id="copy-name" class="primary">Copy project name</button>
+        <p class="muted hint">Paste this into your Adobe Express project title.</p>
+      </div>
+
+      <details>
+        <summary>Personal color name</summary>
+        <form id="personal-form">
+          <label for="personal-name">Name to remember for this HEX</label>
+          <input id="personal-name" maxlength="50" autocomplete="off" placeholder="e.g. Brand teal">
+          <div class="actions">
+            <button class="secondary" type="submit">Remember name</button>
+            <button id="forget-name" class="text-button" type="button" hidden>Forget name</button>
+          </div>
+        </form>
+      </details>
+    </section>
+
+    <details id="manual-entry">
+      <summary>Enter a HEX color</summary>
+      <form id="hex-form">
+        <label for="hex-input">Three or six HEX digits</label>
+        <div class="input-row">
+          <input id="hex-input" placeholder="#008080" spellcheck="false" maxlength="7" autocomplete="off">
+          <button type="submit" class="secondary">Identify</button>
+        </div>
+      </form>
+    </details>
+
+    <details id="history-section" hidden>
+      <summary>Recent picks</summary>
+      <div id="history"></div>
+      <button id="clear-history" class="text-button" type="button">Clear recent picks</button>
+    </details>
+
+    <details>
+      <summary>Color details and settings</summary>
+      <div class="settings">
+        <p id="rgb-value" class="code" hidden></p>
+        <button id="speak" class="secondary" hidden>Read color aloud</button>
+        <label for="name-style">Name style</label>
+        <select id="name-style">
+          <option value="shade">Shade name</option>
+          <option value="family">Color family</option>
+        </select>
+        <label class="check"><input id="include-hex" type="checkbox"> Include HEX in project names</label>
+        <label class="check"><input id="auto-speak" type="checkbox"> Read the color after each pick</label>
+      </div>
+    </details>
+
+    <footer>Made by Vinayak Pathak</footer>
+  </main>
+</body>
+</html>
